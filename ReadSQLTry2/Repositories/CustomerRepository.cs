@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Runtime.Remoting.Messaging;
 using System.Data;
+using System.Drawing;
 
 namespace ReadSQLTry2.Repositories
 {
@@ -52,9 +53,28 @@ namespace ReadSQLTry2.Repositories
         }
 
         public bool DeleteCustomer(int id)
-        {   
+        {
             // Delete customer...
-            throw new NotImplementedException();
+            bool success = false;
+            string sql = "DELETE FROM Customer " +
+                $"WHERE (CustomerId={id})";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionStringHelper.GetConnectionString()))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        success = cmd.ExecuteNonQuery() > 0 ? true : false;
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                // log
+                Console.WriteLine(ex.ToString());
+            }
+            return success;
         }
 
         public List<Customer> GetAllCustomers()
@@ -129,7 +149,7 @@ namespace ReadSQLTry2.Repositories
                     // open connection
                     //Console.WriteLine("Here 1");
                     conn.Open();
-                    Console.WriteLine("Here opened");
+                    //Console.WriteLine("Here opened");
                     // Make a command 
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
