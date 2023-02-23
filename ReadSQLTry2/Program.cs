@@ -17,7 +17,10 @@ namespace ReadSQLTry2
             Console.WriteLine("Hello to SQL");
 
             ICustomerRepository repository = new CustomerRepository();
-            TestSelectAllCustomers(repository);
+            //TestSelectAllCustomers(repository);
+            //TestInsert(repository);
+            int id = 61;
+            TestGetCustomerByID(repository, id);
         }
 
         static void TestSelect(ICustomerRepository repository)
@@ -28,23 +31,32 @@ namespace ReadSQLTry2
         static void TestSelectAllCustomers(ICustomerRepository repository)
         {
             Console.WriteLine("Call PrintCustomers");
-            PrintCustomers(repository.GetAllCustomers());
+            //PrintCustomers(repository.GetAllCustomers());
+            //PrintCustomers(repository.GetAllCustomers());
+        }
+
+       static void TestGetCustomerByID(ICustomerRepository repository ,int id)
+        {
+            Customer testCustomer = new Customer();
+            testCustomer = repository.GetCustomer(id);
+            PrintCustomer(testCustomer);
         }
 
         static void TestInsert(ICustomerRepository repository)
         {
-            Customer test = new Customer()
+            Customer testCustomer = new Customer()
             {
-                CustomerId = 25,
+                CustomerId = 63,
                 FirstName = "Lasse",
                 LastName = "Steinnes",
                 Country = "Norway",
-                PostalCode = "somewhere-only-we-know",
+                PostalCode = "some",
                 Phone = "call-me",
-                Email = "lasse-go-gmail",
+                Email = "lasse-go",
             };
-            if(repository.AddNewCustomer(test)){
+            if(repository.AddNewCustomer(testCustomer)){
                 Console.WriteLine("Works");
+                //PrintCustomer(repository.GetCustomer(61));
             } else
             {
                 Console.WriteLine("Fails");
