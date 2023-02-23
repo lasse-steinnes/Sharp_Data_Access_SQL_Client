@@ -10,7 +10,7 @@ namespace ReadSQLTry2.Repositories
     // Following the repository design pattern
     public interface ICustomerRepository
     { // CRUD: Create, Read, Update, Delete
-        //Customer GetCustomer(int id);
+        // Basic customer
         List<Customer> GetSelectionCustomers(int limit, int offset);
         List<Customer> GetAllCustomers();
         Customer GetCustomerByName(string firstName, string lastName);
@@ -18,5 +18,9 @@ namespace ReadSQLTry2.Repositories
         bool UpdateCustomer(Customer customer);
         bool DeleteCustomer(int id);
         bool AddNewCustomer(Customer customer);
+
+        // countries with number of customers (high-low)
+        List<CustomerCountry> GetCountriesAndSortByCustomers();
+
     }
 }
