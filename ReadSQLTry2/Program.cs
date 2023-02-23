@@ -27,7 +27,8 @@ namespace ReadSQLTry2
             //TestDeleteCustomerByID(repository,id);
             //string first = "Lasse"; string last = "Steinnes";
             //TestGetCustomerByName(repository, first, last);
-            TestSelectCustomers(repository);
+            //TestSelectCustomers(repository);
+            TestGetCountries(repository);
         }
 
         static void TestSelect(ICustomerRepository repository)
@@ -103,6 +104,12 @@ namespace ReadSQLTry2
 
         }
 
+        static void TestGetCountries(ICustomerRepository repository)
+        {
+            List<CustomerCountry> testCountries = new List<CustomerCountry>();
+            testCountries = repository.GetCountriesAndSortByCustomers();
+            PrintCountries(testCountries);
+        }
 
         static void PrintCustomers(IEnumerable<Customer> customers)
         {
@@ -118,6 +125,18 @@ namespace ReadSQLTry2
             Console.WriteLine($"---{customer.CustomerId} {customer.FirstName} {customer.LastName} {customer.Country} {customer.Email} {customer.Phone}---");
         }
 
+        static void PrintCountries(IEnumerable<CustomerCountry> countries)
+        {
+            Console.WriteLine("For each country print...");
+            foreach (CustomerCountry country in countries)
+            {
+                PrintCountry(country);
+            }
+        }
 
+        static void PrintCountry(CustomerCountry country)
+        {
+            Console.WriteLine($"---{country.Country} {country.Count}---");
+        }
     }
 }
