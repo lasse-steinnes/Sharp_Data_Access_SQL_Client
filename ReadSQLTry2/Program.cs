@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
@@ -20,7 +21,8 @@ namespace ReadSQLTry2
             //TestSelectAllCustomers(repository);
             //TestInsert(repository);
             int id = 61;
-            TestGetCustomerByID(repository, id);
+            //TestGetCustomerByID(repository,id);
+            TestDeleteCustomerByID(repository,id);
         }
 
         static void TestSelect(ICustomerRepository repository)
@@ -69,9 +71,16 @@ namespace ReadSQLTry2
             throw new NotImplementedException();
         }
 
-        static void TestDelete(ICustomerRepository repository)
+        static void TestDeleteCustomerByID(ICustomerRepository repository, int id)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Accessed Delete");
+            bool success = false;
+            success = repository.DeleteCustomer(id);
+            if (success)
+            {
+                Console.WriteLine("Customer Deleted");
+            }
+
         }
 
 
