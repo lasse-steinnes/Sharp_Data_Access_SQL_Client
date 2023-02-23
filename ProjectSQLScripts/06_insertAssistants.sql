@@ -1,5 +1,5 @@
 USE SuperheroesDb
-
+/*Inserting Assistants into the columns*/
 INSERT INTO Assistant
 ([Name], SuperheroId)
 VALUES('Starscourge Radahn', 1)
