@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectReadData", "ProjectReadData.csproj", "{7A472DC1-3E9C-4BFD-8CED-C02A2EB3B124}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadSQLTry2", "ReadSQLTry2.csproj", "{D17FA836-0DA2-4721-B76B-A20865BBBBA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7A472DC1-3E9C-4BFD-8CED-C02A2EB3B124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A472DC1-3E9C-4BFD-8CED-C02A2EB3B124}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A472DC1-3E9C-4BFD-8CED-C02A2EB3B124}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A472DC1-3E9C-4BFD-8CED-C02A2EB3B124}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D17FA836-0DA2-4721-B76B-A20865BBBBA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D17FA836-0DA2-4721-B76B-A20865BBBBA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D17FA836-0DA2-4721-B76B-A20865BBBBA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D17FA836-0DA2-4721-B76B-A20865BBBBA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {0B54EDBC-8209-4CA7-9306-31646FC6662F}
+		SolutionGuid = {904BE4E2-5B50-4817-B284-6A2A5E544142}
 	EndGlobalSection
 EndGlobal

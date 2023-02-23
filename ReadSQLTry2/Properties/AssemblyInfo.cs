@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ProjectReadData")]
+[assembly: AssemblyTitle("ReadSQLTry2")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ProjectReadData")]
+[assembly: AssemblyProduct("ReadSQLTry2")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7a472dc1-3e9c-4bfd-8ced-c02a2eb3b124")]
+[assembly: Guid("d17fa836-0da2-4721-b76b-a20865bbbba8")]
 
 // Version information for an assembly consists of the following four values:
 //
