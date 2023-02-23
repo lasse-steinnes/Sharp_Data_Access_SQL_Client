@@ -1,8 +1,12 @@
 USE SuperheroesDb
 
 CREATE TABLE SuperheroPowers (
-	HeroId int FOREIGN KEY REFERENCES Superhero(HeroId),
-	PowerId int FOREIGN KEY REFERENCES [Power](PowerId),
-	PRIMARY KEY (HeroId, PowerId ));
+	SuperHeroId int,
+	SuperPowerId int,
+	PRIMARY KEY (SuperHeroId, SuperPowerId ));
 
-USE master
+ALTER TABLE SuperheroPowers
+	ADD FOREIGN KEY (SuperHeroId) REFERENCES Superhero(HeroId)
+
+ALTER TABLE SuperheroPowers
+	ADD FOREIGN KEY (SuperPowerId)  REFERENCES [Power](PowerId)

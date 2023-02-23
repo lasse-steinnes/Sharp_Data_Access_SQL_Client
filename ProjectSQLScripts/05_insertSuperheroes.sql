@@ -12,4 +12,3 @@ INSERT INTO Superhero
 ([Name], alias, origin)
 VALUES('Ganongoof','Ganondorfs brother','He is so goofy that no person took him seriously, therefore he changed sides and became a superhero')
 
-USE master

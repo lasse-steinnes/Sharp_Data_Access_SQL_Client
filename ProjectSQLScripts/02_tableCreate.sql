@@ -12,7 +12,6 @@ CREATE TABLE Assistant(
 )
 CREATE TABLE [Power] (
 	PowerId int IDENTITY(1,1) PRIMARY KEY,
-	[Name] nvarchar(100),
+	[Power-Name] nvarchar(100),
 	[Description] nvarchar(300)
 )
-USE master
