@@ -28,7 +28,8 @@ namespace ReadSQLTry2
             //string first = "Lasse"; string last = "Steinnes";
             //TestGetCustomerByName(repository, first, last);
             //TestSelectCustomers(repository);
-            TestGetCountries(repository);
+            //TestGetCountries(repository);
+            TestGetSpenders(repository);
         }
 
         static void TestSelect(ICustomerRepository repository)
@@ -111,6 +112,13 @@ namespace ReadSQLTry2
             PrintCountries(testCountries);
         }
 
+        static void TestGetSpenders(ICustomerRepository repository)
+        {
+            List<CustomerSpender> testSpenders = new List<CustomerSpender>();
+            testSpenders = repository.GetSpendersAndSortByTotal();
+            PrintSpenders(testSpenders);
+        }
+
         static void PrintCustomers(IEnumerable<Customer> customers)
         {
             Console.WriteLine("For each customer print...");
@@ -137,6 +145,21 @@ namespace ReadSQLTry2
         static void PrintCountry(CustomerCountry country)
         {
             Console.WriteLine($"---{country.Country} {country.Count}---");
+        }
+
+
+        static void PrintSpenders(IEnumerable<CustomerSpender> spenders)
+        {
+            Console.WriteLine("For each spender print...");
+            foreach (CustomerSpender spender in spenders)
+            {
+                PrintSpender(spender);
+            }
+        }
+
+        static void PrintSpender(CustomerSpender spender)
+        {
+            Console.WriteLine($"---{spender.CustomerId} {spender.InvoiceTotal}---");
         }
     }
 }
