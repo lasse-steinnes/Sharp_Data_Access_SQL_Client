@@ -12,7 +12,5 @@ Assignment 2: .NET Noroff Accelerate course.
 
 > Part of the Noroff fullstack .NET accelerate module.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
-
 ## Download
 You can download the code with ```bash== git clone (this url) ```.
