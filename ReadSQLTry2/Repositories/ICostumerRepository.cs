@@ -21,6 +21,7 @@ namespace ReadSQLTry2.Repositories
 
         // countries with number of customers (high-low)
         List<CustomerCountry> GetCountriesAndSortByCustomers();
-
+        // CustomerSpender with total (high-low)
+        List<CustomerSpender> GetSpendersAndSortByTotal();
     }
 }
