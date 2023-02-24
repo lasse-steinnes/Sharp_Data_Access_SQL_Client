@@ -357,6 +357,49 @@ public bool UpdateCustomer(Customer customer)
 
             return countryList;
         }
+
+        public List<CustomerSpender> GetSpendersAndSortByTotal()
+        {
+            List<CustomerSpender> spenderList = new List<CustomerSpender>();
+
+            string sql = "SELECT CustomerId, Total FROM Invoice ORDER BY Total DESC";
+
+            try
+            {
+                // Connect
+                using (SqlConnection conn = new SqlConnection(ConnectionStringHelper.GetConnectionString()))
+
+                {
+                    // open connection
+                    conn.Open();
+                    // Make a command 
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        // Reader
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                // Handle result by deserializing
+                                CustomerSpender temp = new CustomerSpender();
+                                temp.CustomerId = reader.GetInt32(0);
+                                temp.InvoiceTotal = reader.GetDecimal(1);
+
+                                spenderList.Add(temp);
+                                //Console.WriteLine(temp.Email);
+                            }
+                        }
+                    }
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            return spenderList;
+        }
     }
 }
 // NONquery: Insert, update and delete
