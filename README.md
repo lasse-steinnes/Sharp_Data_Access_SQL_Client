@@ -6,7 +6,7 @@ Assignment 2: .NET Noroff Accelerate course.
 
 > SQL Script to create a database.
 
-> SQL Client to read from a database.
+> SQL Client applied to read from a database in C# .NET framework.
 
 > Repository design pattern.
 
