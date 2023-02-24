@@ -1,5 +1,6 @@
 # Sharp_Data_Access_SQL_Client
 ![build](https://img.shields.io/badge/build-passing-green)
+
 Assignment 2: .NET Noroff Accelerate course.
 
 ## Abstract
